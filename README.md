@@ -159,23 +159,60 @@ Realizamos prueba de conexion entre cliente y servidor con un ping.
 
 Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
 >guillevr@servidor:~$ sudo apt-get update
->[sudo] contraseña para guillevr:
+>
+>[sudo] contraseña para guillevr: 
+>
 >Obj:1 http://es.archive.ubuntu.com/ubuntu hirsute InRelease
->Obj:2 http://es.archive.ubuntu.com/ubuntu hirsute-updates InRelease
->Obj:3 http://es.archive.ubuntu.com/ubuntu hirsute-backports InRelease
->Obj:4 http://security.ubuntu.com/ubuntu hirsute-security InRelease
+>
+>Des:2 http://security.ubuntu.com/ubuntu hirsute-security InRelease [110 kB]
+>
+>Des:3 http://es.archive.ubuntu.com/ubuntu hirsute-updates InRelease [115 kB]
+>
+>Des:4 http://es.archive.ubuntu.com/ubuntu hirsute-backports InRelease [101 kB]
+>
+>Des:5 http://security.ubuntu.com/ubuntu hirsute-security/main amd64 DEP-11 Metadata [9.696 B]
+>
+>Des:6 http://security.ubuntu.com/ubuntu hirsute-security/universe amd64 DEP-11 Metadata [5.672 B]
+>
+>Des:7 http://es.archive.ubuntu.com/ubuntu hirsute-updates/main amd64 DEP-11 Metadata [95,1 kB]
+>
+>Des:8 http://es.archive.ubuntu.com/ubuntu hirsute-updates/universe amd64 DEP-11 Metadata [57,8 kB]
+>
+>Des:9 http://es.archive.ubuntu.com/ubuntu hirsute-updates/multiverse amd64 DEP-11 Metadata [944 B]
+>
+>Des:10 http://es.archive.ubuntu.com/ubuntu hirsute-backports/universe amd64 DEP-11 Metadata [9.352 B]
+>
+>Descargados 505 kB en 2s (226 kB/s)                                         
+>
 >Leyendo lista de paquetes... Hecho
->guillevr@servidor:~$
+>
+>guillevr@servidor:~$ 
+>
+>guillevr@servidor:~$ sudo apt-get grade
+>
+>E: Operación inválida: grade
+>
 >guillevr@servidor:~$ sudo apt-get upgrade
+>
 >Leyendo lista de paquetes... Hecho
+>
 >Creando árbol de dependencias... Hecho
+>
 >Leyendo la información de estado... Hecho
+>
 >Calculando la actualización... Hecho
+>
 >Los siguientes paquetes se han retenido:
+>
 >  linux-generic-hwe-20.04 linux-headers-generic-hwe-20.04
+>
 >  linux-image-generic-hwe-20.04
+>
 >0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
->guillevr@servidor:~$
+>
+>guillevr@servidor:~$ 
+
+
 
 Como observamos, el equipo está actualizado. El siguiente paso será instalar apache2.
 
