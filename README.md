@@ -45,9 +45,89 @@ En el pasado, esta herramienta se utiliza para temas de ciberseguridad, pero tam
 * Pruebas de red usando diferentes protocolos, ToS, fragmentación etc.
 * Descubrir el MTU en la ruta de forma manual.
 * Traceroute avanzado usando todos los protocolos admitidos
-* Huella digital remota del sistema operativo
+* Huella digital remota ºdel sistema operativo
 * Comprobar el tiempo de distancia
 * Auditoría de pilas TCP/IP
+
+## Comprobamos la IP del equipo CLIENTE y SERVIDOR y realizamos pruebas de conectividad entre ellos.
+IP equipo CLIENTE:
+
+>guillevr@cliente:~$ ifconfig
+>
+>enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+>
+>        inet 10.0.2.4  netmask 255.255.255.0  broadcast 10.0.2.255
+>
+>        inet6 fe80::5202:97b9:3faf:ecce  prefixlen 64  scopeid 0x20<link>
+>
+>        ether 08:00:27:60:93:c3  txqueuelen 1000  (Ethernet)
+>
+>        RX packets 18034  bytes 21898656 (21.8 MB)
+>
+>        RX errors 0  dropped 0  overruns 0  frame 0
+>
+>        TX packets 12939  bytes 2304910 (2.3 MB)
+>
+>        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+>
+>
+>
+>lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+>
+>        inet 127.0.0.1  netmask 255.0.0.0
+>
+>        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+>
+>        loop  txqueuelen 1000  (Bucle local)
+>
+>        RX packets 879  bytes 98837 (98.8 KB)
+>
+>        RX errors 0  dropped 0  overruns 0  frame 0
+>
+>        TX packets 879  bytes 98837 (98.8 KB)
+>
+>        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+IP equipo SERVIDOR:
+
+>guillevr@servidor:~$ ifconfig
+>
+>enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+>
+>        inet 10.0.2.5  netmask 255.255.255.0  broadcast 10.0.2.255
+>
+>        inet6 fe80::5202:97b9:3faf:ecce  prefixlen 64  scopeid 0x20<link>
+>
+>        ether 08:00:27:60:93:c3  txqueuelen 1000  (Ethernet)
+>
+>        RX packets 18034  bytes 21898656 (21.8 MB)
+>
+>        RX errors 0  dropped 0  overruns 0  frame 0
+>
+>        TX packets 12939  bytes 2304910 (2.3 MB)
+>
+>        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+>
+>
+>
+>lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+>
+>        inet 127.0.0.1  netmask 255.0.0.0
+>
+>        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+>
+>        loop  txqueuelen 1000  (Bucle local)
+>
+>        RX packets 879  bytes 98837 (98.8 KB)
+>
+>        RX errors 0  dropped 0  overruns 0  frame 0
+>
+>        TX packets 879  bytes 98837 (98.8 KB)
+>
+>        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
 
 ## Configuración del equipo SERVIDOR
 
@@ -160,26 +240,20 @@ Una vez haya terminado la instalacion, comprobamos el estado de apache y a trave
 >guillevr@servidor:~$
 
 
-
-
-
-##FALTA AÑADIR LA FOTO.
-
-
 Ahora editaremos la pagina un poco para darle un toque personal.
 >guillevr@servidor:~$ sudo gedit /var/www/html/index.html
 >
 >
 >
->guillevr@servidor:~$ sudo gedit /var/www/html/index.html 
+>guillevr@servidor:~$ sudo gedit /var/www/html/index.html
 >
 >
 >
 >(gedit:4710): GtkSourceView-CRITICAL **: 22:50:31.266: El resaltado de una linea llevó mucho tiempo, se desactivará el resaltado de sintaxis
 >
->guillevr@servidor:~$ 
+>guillevr@servidor:~$
 >
->guillevr@servidor:~$ cat /var/www/html/index.html 
+>guillevr@servidor:~$ cat /var/www/html/index.html
 >
 >
 >
@@ -197,7 +271,7 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >
 >
 >
->guillevr@servidor:~$ 
+>guillevr@servidor:~$
 
 
->
+## FALTA AÑADIR LA FOTO.
