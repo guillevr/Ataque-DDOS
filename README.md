@@ -53,20 +53,39 @@ En el pasado, esta herramienta se utiliza para temas de ciberseguridad, pero tam
 
 Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
 >guillevr@servidor:~$ sudo apt-get update
->[sudo] contraseña para guillevr: 
+
+>[sudo] contraseña para guillevr:
+
 >Obj:1 http://es.archive.ubuntu.com/ubuntu hirsute InRelease
+
 >Obj:2 http://es.archive.ubuntu.com/ubuntu hirsute-updates InRelease
+
 >Obj:3 http://es.archive.ubuntu.com/ubuntu hirsute-backports InRelease
+
 >Obj:4 http://security.ubuntu.com/ubuntu hirsute-security InRelease
+
 >Leyendo lista de paquetes... Hecho
->guillevr@servidor:~$ 
->guillevr@servidor:~$ sudo apt-get upgrade
->Leyendo lista de paquetes... Hecho
->Creando árbol de dependencias... Hecho
->Leyendo la información de estado... Hecho
->Calculando la actualización... Hecho
->Los siguientes paquetes se han retenido:
->  linux-generic-hwe-20.04 linux-headers-generic-hwe-20.04
->  linux-image-generic-hwe-20.04
->0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
+
 >guillevr@servidor:~$
+
+>guillevr@servidor:~$ sudo apt-get upgrade
+
+>Leyendo lista de paquetes... Hecho
+
+>Creando árbol de dependencias... Hecho
+
+>Leyendo la información de estado... Hecho
+
+>Calculando la actualización... Hecho
+
+>Los siguientes paquetes se han retenido:
+
+>  linux-generic-hwe-20.04 linux-headers-generic-hwe-20.04
+
+>  linux-image-generic-hwe-20.04
+
+>0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
+
+>guillevr@servidor:~$
+
+Como observamos, el equipo está actualizado.
