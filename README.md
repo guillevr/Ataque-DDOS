@@ -88,4 +88,106 @@ Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
 
 >guillevr@servidor:~$
 
-Como observamos, el equipo está actualizado.
+Como observamos, el equipo está actualizado. El siguiente paso será instalar apache2.
+
+> guillevr@servidor:~$ sudo apt-get install apache2
+>
+> [sudo] contraseña para guillevr:
+>
+> Leyendo lista de paquetes... Hecho
+>
+> Creando árbol de dependencias... Hecho
+>
+> Leyendo la información de estado... Hecho
+>
+> Se instalarán los siguientes paquetes adicionales:
+>
+>   apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+>
+>   libaprutil1-dbd-sqlite3 libaprutil1-ldap
+>
+> Paquetes sugeridos:
+>
+>   apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+>
+> Se instalarán los siguientes paquetes NUEVOS:
+>
+>   apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1
+>
+>   libaprutil1-dbd-sqlite3 libaprutil1-ldap
+>
+> 0 actualizados, 8 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
+>
+> Se necesita descargar 1.741 kB de archivos.
+>
+> Se utilizarán 7.550 kB de espacio de disco adicional después de esta operación.
+>
+> ¿Desea continuar? [S/n] s
+
+Una vez haya terminado la instalacion, comprobamos el estado de apache y a traves del navegador, comprobamos que el sitio web funciona perfectamente.
+>guillevr@servidor:~$ service apache2 status
+>
+>● apache2.service - The Apache HTTP Server
+>
+>     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor prese>
+>
+>     Active: active (running) since Sun 2021-10-17 22:35:57 CEST; 20min ago
+>
+>       Docs: https://httpd.apache.org/docs/2.4/
+>
+>   Main PID: 3551 (apache2)
+>
+>      Tasks: 55 (limit: 5478)
+>
+>     Memory: 5.2M
+>
+>     CGroup: /system.slice/apache2.service
+>
+>             ├─3551 /usr/sbin/apache2 -k start
+>
+>             ├─3553 /usr/sbin/apache2 -k start
+>
+>             └─3554 /usr/sbin/apache2 -k start
+>
+>
+>
+>oct 17 22:35:57 servidor systemd[1]: Starting The Apache HTTP Server...
+>
+>oct 17 22:35:57 servidor apachectl[3550]: AH00558: apache2: Could not reliably >
+>
+>oct 17 22:35:57 servidor systemd[1]: Started The Apache HTTP Server.
+>
+>guillevr@servidor:~$ 
+
+
+
+##FALTA AÑADIR LA FOTO.
+
+
+Ahora editaremos la pagina un poco para darle un toque personal.
+>guillevr@servidor:~$ sudo gedit /var/www/html/index.html
+>
+>
+>
+>(gedit:4710): GtkSourceView-CRITICAL **: 22:50:31.266: El resaltado de una linea llevó mucho tiempo, se desactivará el resaltado de sintaxis
+>
+>guillevr@servidor:~$
+>
+>guillevr@servidor:~$ cat /var/www/html/index.html
+>
+>
+>
+><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+>
+><html xmlns="http://www.w3.org/1999/xhtml">
+>
+>	<body>
+>
+>		<h2 align="center">Pagina para el proyecto de seguridad.</h2>
+>
+>	</body>
+>
+></html>
+>
+>guillevr@servidor:~$
+>
