@@ -129,27 +129,16 @@ Una vez haya terminado la instalacion, comprobamos el estado de apache y a trave
 >
 >● apache2.service - The Apache HTTP Server
 >
->     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor prese>
->
->     Active: active (running) since Sun 2021-10-17 22:35:57 CEST; 20min ago
->
->       Docs: https://httpd.apache.org/docs/2.4/
->
->   Main PID: 3551 (apache2)
->
->      Tasks: 55 (limit: 5478)
->
->     Memory: 5.2M
->
->     CGroup: /system.slice/apache2.service
->
->             ├─3551 /usr/sbin/apache2 -k start
->
->             ├─3553 /usr/sbin/apache2 -k start
->
->             └─3554 /usr/sbin/apache2 -k start
->
->
+>Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor prese>
+>Active: active (running) since Sun 2021-10-17 22:35:57 CEST; 20min ago
+>Docs: https://httpd.apache.org/docs/2.4/
+>Main PID: 3551 (apache2)
+>Tasks: 55 (limit: 5478)
+>Memory: 5.2M
+>CGroup: /system.slice/apache2.service
+>        ├─3551 /usr/sbin/apache2 -k start
+>        ├─3553 /usr/sbin/apache2 -k start
+>        └─3554 /usr/sbin/apache2 -k start
 >
 >oct 17 22:35:57 servidor systemd[1]: Starting The Apache HTTP Server...
 >
@@ -157,7 +146,7 @@ Una vez haya terminado la instalacion, comprobamos el estado de apache y a trave
 >
 >oct 17 22:35:57 servidor systemd[1]: Started The Apache HTTP Server.
 >
->guillevr@servidor:~$ 
+>guillevr@servidor:~$
 
 
 
