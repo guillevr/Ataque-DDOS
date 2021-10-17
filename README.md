@@ -170,11 +170,11 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >
 ><html xmlns="http://www.w3.org/1999/xhtml">
 >
->	<body>
+><body>
 >
->		<h2 align="center">Pagina para el proyecto de seguridad.</h2>
+><h2 align="center">Pagina para el proyecto de seguridad.</h2>
 >
->	</body>
+></body>
 >
 ></html>
 >
