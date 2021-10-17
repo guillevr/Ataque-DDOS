@@ -323,7 +323,7 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 ![](pag_por_defecto_apache.png)
 
 
-## Configuración del equipo SERVIDOR
+## Configuración del equipo CLIENTE
 
 Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
 >guillevr@cliente:~$ sudo apt-get update
@@ -411,3 +411,23 @@ Ahora instalaremos la herramienta que necesitamos para dicho ataque.
 >Configurando hping3 (3.a2.ds2-10) ...
 >
 >Procesando disparadores para man-db (2.9.4-2) ...
+
+## Uso básico de la herramienta.
+
+Uso básico de la herramienta:
+El uso de esta herramienta es muy sencillo, pero disponemos de una gran cantidad de argumentos con el objetivo de aumentar sus funcionalidades, como lanzar un determinado número de paquetes, enviar paquetes con un determinado intervalo de espera, enviar paquetes para «floodear» a un objetivo y realizarle una denegación de servicio, posibilidad de contar los paquetes enviados y recibidos por los diferenes hosts, e incluso un modo de depuración para ver a bajo nivel qué está ocurriendo en la red.
+
+* v –version muestra la versión actual de hping3
+* -c –count contador de paquetes
+* -i –interval tiempo de espera (uX para X microsegundos, por ejemplo -i u1000)
+* –fast alias para -i u10000 (10 paquetes por segundo)
+* –faster alias para -i u1000 (100 paquetes por segundo)
+* –flood envía paquetes lo más rápido posible, no muestra las respuestas.
+* -n –numeric salida con números
+* -q –quiet comando silencioso sin que lo muestre por pantalla
+* -I –interface nombre de la interfaz, si no se pone nada, por defecto es la interfaz de la puerta de encima predeterminada.
+* -V –verbose modo verbose para depuración
+* -D –debug información de debugging
+* -z –bind enlaza ctrl+z a ttl (por defecto al puerto de destino)
+* -Z –unbind desenlaza ctrl+z
+* –beep beep por cada paquete recibido que coincida
