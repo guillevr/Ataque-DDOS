@@ -127,6 +127,32 @@ IP equipo SERVIDOR:
 >
 >        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
+Realizamos prueba de conexion entre cliente y servidor con un ping.
+>guillevr@cliente:~$ ping 10.0.2.5
+>
+>PING 10.0.2.5 (10.0.2.5) 56(84) bytes of data.
+>
+>64 bytes from 10.0.2.5: icmp_seq=1 ttl=64 time=1.13 ms
+>
+>64 bytes from 10.0.2.5: icmp_seq=2 ttl=64 time=0.571 ms
+>
+>64 bytes from 10.0.2.5: icmp_seq=3 ttl=64 time=0.976 ms
+>
+>64 bytes from 10.0.2.5: icmp_seq=4 ttl=64 time=0.403 ms
+>
+>64 bytes from 10.0.2.5: icmp_seq=5 ttl=64 time=0.890 ms
+>
+>^C
+>
+>--- 10.0.2.5 ping statistics ---
+>
+>5 packets transmitted, 5 received, 0% packet loss, time 4027ms
+>
+>rtt min/avg/max/mdev = 0.403/0.794/1.132/0.268 ms
+>
+>guillevr@cliente:~$ 
+
+
 
 
 ## Configuración del equipo SERVIDOR
