@@ -129,16 +129,27 @@ Una vez haya terminado la instalacion, comprobamos el estado de apache y a trave
 >
 >● apache2.service - The Apache HTTP Server
 >
-> Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor prese>
-> Active: active (running) since Sun 2021-10-17 22:35:57 CEST; 20min ago
-> Docs: https://httpd.apache.org/docs/2.4/
-> Main PID: 3551 (apache2)
-> Tasks: 55 (limit: 5478)
-> Memory: 5.2M
-> CGroup: /system.slice/apache2.service
->         ├─3551 /usr/sbin/apache2 -k start
->         ├─3553 /usr/sbin/apache2 -k start
->         └─3554 /usr/sbin/apache2 -k start
+>     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor prese>
+>
+>     Active: active (running) since Sun 2021-10-17 22:35:57 CEST; 20min ago
+>
+>       Docs: https://httpd.apache.org/docs/2.4/
+>
+>   Main PID: 3551 (apache2)
+>
+>      Tasks: 55 (limit: 5478)
+>
+>     Memory: 5.2M
+>
+>     CGroup: /system.slice/apache2.service
+>
+>             ├─3551 /usr/sbin/apache2 -k start
+>
+>             ├─3553 /usr/sbin/apache2 -k start
+>
+>             └─3554 /usr/sbin/apache2 -k start
+>
+>
 >
 >oct 17 22:35:57 servidor systemd[1]: Starting The Apache HTTP Server...
 >
@@ -150,6 +161,8 @@ Una vez haya terminado la instalacion, comprobamos el estado de apache y a trave
 
 
 
+
+
 ##FALTA AÑADIR LA FOTO.
 
 
@@ -158,11 +171,15 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >
 >
 >
+>guillevr@servidor:~$ sudo gedit /var/www/html/index.html 
+>
+>
+>
 >(gedit:4710): GtkSourceView-CRITICAL **: 22:50:31.266: El resaltado de una linea llevó mucho tiempo, se desactivará el resaltado de sintaxis
 >
->guillevr@servidor:~$
+>guillevr@servidor:~$ 
 >
->guillevr@servidor:~$ cat /var/www/html/index.html
+>guillevr@servidor:~$ cat /var/www/html/index.html 
 >
 >
 >
@@ -170,13 +187,17 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >
 ><html xmlns="http://www.w3.org/1999/xhtml">
 >
-><body>
+>	<body>
 >
-><h2 align="center">Pagina para el proyecto de seguridad.</h2>
+>		<h2 align="center">Pagina para el proyecto de seguridad.</h2>
 >
-></body>
+>	</body>
 >
 ></html>
 >
->guillevr@servidor:~$
+>
+>
+>guillevr@servidor:~$ 
+
+
 >
