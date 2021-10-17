@@ -320,4 +320,4 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >guillevr@servidor:~$
 
 
-![](C:\Users\Guille\Desktop\TRABAJOS\REALIZAR ATAQUE DDOS SEGURIDAD/pag_por_defecto_apache.png)
+![](pag_por_defecto_apache.png)
