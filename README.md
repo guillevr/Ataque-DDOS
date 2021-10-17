@@ -160,7 +160,7 @@ Realizamos prueba de conexion entre cliente y servidor con un ping.
 Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
 >guillevr@servidor:~$ sudo apt-get update
 >
->[sudo] contraseña para guillevr: 
+>[sudo] contraseña para guillevr:
 >
 >Obj:1 http://es.archive.ubuntu.com/ubuntu hirsute InRelease
 >
@@ -186,7 +186,7 @@ Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
 >
 >Leyendo lista de paquetes... Hecho
 >
->guillevr@servidor:~$ 
+>guillevr@servidor:~$
 >
 >guillevr@servidor:~$ sudo apt-get grade
 >
@@ -210,7 +210,7 @@ Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
 >
 >0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
 >
->guillevr@servidor:~$ 
+>guillevr@servidor:~$
 
 
 
@@ -320,4 +320,4 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >guillevr@servidor:~$
 
 
-## FALTA AÑADIR LA FOTO.
+![Pagina por defecto apache](C:\Users\Guille\Desktop\TRABAJOS\REALIZAR ATAQUE DDOS SEGURIDAD/pag_por_defecto_apache)
