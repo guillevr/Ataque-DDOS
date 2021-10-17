@@ -19,7 +19,7 @@ En ocasiones, esta herramienta ha sido utilizada como un buen método para compr
 * Interrupción de componentes físicos de red.
 * Obstrucción de medios de comunicación entre usuarios de un servicio y la víctima, de manera que ya no puedan comunicarse adecuadamente.
 
-** Requisitos **
+**Requisitos**
 
 Para realizar dicho ataque necesitaremos al menos dos máquinas con Ubuntu. Una de ellas tendrá un servidor web (apache) y la segunda maquina, será el cliente que utilizaremos para atacar al servidor.
 
@@ -35,6 +35,7 @@ Como he comentado anteriormente, para realizar dicho ataque necesitaremos dos ma
 Para realizar el ataque, deberemos tener en el cliente instalado Hping3.
 
 **¿Que es Hping3?**
+
 Hping3 es una aplicación de terminal para Linux que nos va a permitir analizar y ensamblar fácilmente paquetes TCP/IP. A diferencia de un Ping convencional que se utiliza para enviar paquetes ICMP, esta aplicación permite el envío de paquetes TCP, UDP y RAW-IP. Junto al análisis de los paquetes, esta aplicación puede ser utilizada también con otros fines de seguridad, por ejemplo, para probar la eficacia de un firewall a través de diferentes protocolos, la detección de paquetes sospechosos o modificados, e incluso la protección frente a ataques DoS de un sistema o de un Firewall.
 
 En el pasado, esta herramienta se utiliza para temas de ciberseguridad, pero también podemos usarla para probar redes y hosts. Algunas de las principales aplicaciones que podemos hacer con esta herramienta son las siguientes:
