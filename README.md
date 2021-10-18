@@ -383,42 +383,42 @@ Lo mas importante es, irnos al CLIENTE y comprobar que buscando en el navegador 
 >
 > guillevr@atacante:~$
 
-Ahora instalaremos la herramienta que necesitamos para dicho ataque.
+Ahora instalaremos la herramienta que necesitamos para dicho ataque (hping3) y una herramienta que necesitaremos para ver las peticiones que se realizan hacia el servidor (wireshark).
 > guillevr@atacante:~$ sudo apt-get install hping3
-> 
+>
 > Leyendo lista de paquetes... Hecho
-> 
+>
 > Creando árbol de dependencias... Hecho
-> 
+>
 > Leyendo la información de estado... Hecho
-> 
+>
 > Se instalarán los siguientes paquetes NUEVOS:
-> 
+>
 >   hping3
-> 
+>
 > 0 actualizados, 1 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
-> 
+>
 > Se necesita descargar 106 kB de archivos.
-> 
+>
 > Se utilizarán 263 kB de espacio de disco adicional después de esta operación.
-> 
+>
 > Des:1 http://es.archive.ubuntu.com/ubuntu hirsute/universe amd64 hping3 amd64 3.a2.ds2-10 [106 kB]
-> 
+>
 > Descargados 106 kB en 0s (282 kB/s)
-> 
+>
 > Seleccionando el paquete hping3 previamente no seleccionado.
-> 
+>
 > (Leyendo la base de datos ... 192380 ficheros o directorios instalados actualmente.)
-> 
+>
 > Preparando para desempaquetar .../hping3_3.a2.ds2-10_amd64.deb ...
-> 
+>
 > Desempaquetando hping3 (3.a2.ds2-10) ...
-> 
+>
 > Configurando hping3 (3.a2.ds2-10) ...
-> 
+>
 > Procesando disparadores para man-db (2.9.4-2) ...
-> 
-> guillevr@atacante:~$ 
+>
+> guillevr@atacante:~$
 
 
 ## Uso básico de Hping3.
