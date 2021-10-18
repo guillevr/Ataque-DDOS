@@ -21,7 +21,7 @@ En ocasiones, esta herramienta ha sido utilizada como un buen método para compr
 
 **Requisitos**
 
-Para realizar dicho ataque necesitaremos al menos dos máquinas con Ubuntu. Una de ellas tendrá un servidor web (apache) y la segunda maquina, será el cliente que utilizaremos para atacar al servidor.
+Para realizar dicho ataque necesitaremos al menos tres máquinas con Ubuntu 21.04 (puedes elegir la versión que quieras). La primera máquina tendrá un servidor web (apache), la segunda, será el cliente que utilizaremos para intentar conectar el servidor y la tercera maquina, será la que utilizaremos para atacar el servidor.
 
 Los requisitos básicos/mínimos para poder instalar ubuntu son:
 * Procesador de doble nucleo de 2 GHz o superior.
@@ -127,32 +127,50 @@ IP equipo SERVIDOR:
 >
 >        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-Realizamos prueba de conexion entre cliente y servidor con un ping.
->guillevr@cliente:~$ ping 10.0.2.5
+Realizamos prueba de conexion desde el ATACANTE hacia el SERVIDOR y el CLIENTE con un ping.
+> guillevr@atacante:~$ ping 10.0.2.4
 >
->PING 10.0.2.5 (10.0.2.5) 56(84) bytes of data.
+> PING 10.0.2.4 (10.0.2.4) 56(84) bytes of data.
 >
->64 bytes from 10.0.2.5: icmp_seq=1 ttl=64 time=1.13 ms
+> 64 bytes from 10.0.2.4: icmp_seq=1 ttl=64 time=1.87 ms
 >
->64 bytes from 10.0.2.5: icmp_seq=2 ttl=64 time=0.571 ms
+> 64 bytes from 10.0.2.4: icmp_seq=2 ttl=64 time=0.774 ms
 >
->64 bytes from 10.0.2.5: icmp_seq=3 ttl=64 time=0.976 ms
+> 64 bytes from 10.0.2.4: icmp_seq=3 ttl=64 time=0.628 ms
 >
->64 bytes from 10.0.2.5: icmp_seq=4 ttl=64 time=0.403 ms
+> 64 bytes from 10.0.2.4: icmp_seq=4 ttl=64 time=0.621 ms
 >
->64 bytes from 10.0.2.5: icmp_seq=5 ttl=64 time=0.890 ms
+> ^C
 >
->^C
+> --- 10.0.2.4 ping statistics ---
 >
->--- 10.0.2.5 ping statistics ---
+> 4 packets transmitted, 4 received, 0% packet loss, time 3024ms
 >
->5 packets transmitted, 5 received, 0% packet loss, time 4027ms
+> rtt min/avg/max/mdev = 0.621/0.972/1.868/0.520 ms
 >
->rtt min/avg/max/mdev = 0.403/0.794/1.132/0.268 ms
+> guillevr@atacante:~$
 >
->guillevr@cliente:~$
-
-
+> guillevr@atacante:~$ ping 10.0.2.5
+>
+> PING 10.0.2.5 (10.0.2.5) 56(84) bytes of data.
+>
+> 64 bytes from 10.0.2.5: icmp_seq=1 ttl=64 time=1.08 ms
+>
+> 64 bytes from 10.0.2.5: icmp_seq=2 ttl=64 time=0.753 ms
+>
+> 64 bytes from 10.0.2.5: icmp_seq=3 ttl=64 time=0.681 ms
+>
+> 64 bytes from 10.0.2.5: icmp_seq=4 ttl=64 time=0.976 ms
+>
+> ^C
+>
+> --- 10.0.2.5 ping statistics ---
+>
+> 4 packets transmitted, 4 received, 0% packet loss, time 3033ms
+>
+> rtt min/avg/max/mdev = 0.681/0.872/1.081/0.162 ms
+>
+> guillevr@atacante:~$
 
 
 ## Configuración del equipo SERVIDOR
@@ -322,97 +340,88 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 
 ![](pag_por_defecto_apache.png)
 
+Lo mas importante es, irnos al CLIENTE y comprobar que buscando en el navegador la IP del SERVIDOR nos aparece la página web que hemos creado.
+![](acceso_a_web_cliente_servidor.png)
 
-## Configuración del equipo CLIENTE
 
-Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
->guillevr@cliente:~$ sudo apt-get update
+## Configuración del equipo ATACANTE.
+
+> Lo primero que debemos de hacer es comprobar que el equipo está actualizado.
+> guillevr@atacante:~$ sudo apt-get update
 >
->[sudo] contraseña para guillevr:
+> [sudo] contraseña para guillevr:
 >
->Obj:1 http://es.archive.ubuntu.com/ubuntu hirsute InRelease
+> Obj:1 http://security.ubuntu.com/ubuntu hirsute-security InRelease
 >
->Des:2 http://security.ubuntu.com/ubuntu hirsute-security InRelease [110 kB]
+> Obj:2 http://es.archive.ubuntu.com/ubuntu hirsute InRelease
 >
->Des:3 http://es.archive.ubuntu.com/ubuntu hirsute-updates InRelease [115 kB]
+> Obj:3 http://es.archive.ubuntu.com/ubuntu hirsute-updates InRelease
 >
->Des:4 http://es.archive.ubuntu.com/ubuntu hirsute-backports InRelease [101 kB]
+> Obj:4 http://es.archive.ubuntu.com/ubuntu hirsute-backports InRelease
 >
->Des:5 http://security.ubuntu.com/ubuntu hirsute-security/main amd64 DEP-11 Metadata [9.692 B]
+> Leyendo lista de paquetes... Hecho
 >
->Des:6 http://security.ubuntu.com/ubuntu hirsute-security/universe amd64 DEP-11 Metadata [5.664 B]
+> guillevr@atacante:~$
 >
->Des:7 http://es.archive.ubuntu.com/ubuntu hirsute-updates/main amd64 DEP-11 Metadata [95,0 kB]
+> guillevr@atacante:~$ sudo apt-get upgrade
 >
->Des:8 http://es.archive.ubuntu.com/ubuntu hirsute-updates/universe amd64 DEP-11 Metadata [57,7 kB]
+> Leyendo lista de paquetes... Hecho
 >
->Des:9 http://es.archive.ubuntu.com/ubuntu hirsute-updates/multiverse amd64 DEP-11 Metadata [944 B]
+> Creando árbol de dependencias... Hecho
 >
->Des:10 http://es.archive.ubuntu.com/ubuntu hirsute-backports/universe amd64 DEP-11 Metadata [9.348 B]
+> Leyendo la información de estado... Hecho
 >
->Descargados 504 kB en 2s (276 kB/s)                                         
+> Calculando la actualización... Hecho
 >
->Leyendo lista de paquetes... Hecho
+> Los siguientes paquetes se han retenido:
 >
->guillevr@cliente:~$
+>   linux-generic-hwe-20.04 linux-headers-generic-hwe-20.04
 >
->guillevr@cliente:~$ sudo apt-get upgrade
+>   linux-image-generic-hwe-20.04
 >
->Leyendo lista de paquetes... Hecho
+> 0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
 >
->Creando árbol de dependencias... Hecho
->
->Leyendo la información de estado... Hecho
->
->Calculando la actualización... Hecho
->
->Los siguientes paquetes se han retenido:
->
->  linux-generic-hwe-20.04 linux-headers-generic-hwe-20.04
->
->  linux-image-generic-hwe-20.04
->
->0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
->
->guillevr@cliente:~$
+> guillevr@atacante:~$
 
 Ahora instalaremos la herramienta que necesitamos para dicho ataque.
+> guillevr@atacante:~$ sudo apt-get install hping3
+> 
+> Leyendo lista de paquetes... Hecho
+> 
+> Creando árbol de dependencias... Hecho
+> 
+> Leyendo la información de estado... Hecho
+> 
+> Se instalarán los siguientes paquetes NUEVOS:
+> 
+>   hping3
+> 
+> 0 actualizados, 1 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
+> 
+> Se necesita descargar 106 kB de archivos.
+> 
+> Se utilizarán 263 kB de espacio de disco adicional después de esta operación.
+> 
+> Des:1 http://es.archive.ubuntu.com/ubuntu hirsute/universe amd64 hping3 amd64 3.a2.ds2-10 [106 kB]
+> 
+> Descargados 106 kB en 0s (282 kB/s)
+> 
+> Seleccionando el paquete hping3 previamente no seleccionado.
+> 
+> (Leyendo la base de datos ... 192380 ficheros o directorios instalados actualmente.)
+> 
+> Preparando para desempaquetar .../hping3_3.a2.ds2-10_amd64.deb ...
+> 
+> Desempaquetando hping3 (3.a2.ds2-10) ...
+> 
+> Configurando hping3 (3.a2.ds2-10) ...
+> 
+> Procesando disparadores para man-db (2.9.4-2) ...
+> 
+> guillevr@atacante:~$ 
 
->guillevr@cliente:~$ sudo apt-get install hping3
->
->Leyendo lista de paquetes... Hecho
->
->Creando árbol de dependencias... Hecho
->
->Leyendo la información de estado... Hecho
->
->Se instalarán los siguientes paquetes NUEVOS:
->
->  hping3
->
->0 actualizados, 1 nuevos se instalarán, 0 para eliminar y 3 no actualizados.
->
->Se necesita descargar 106 kB de archivos.
->
->Se utilizarán 263 kB de espacio de disco adicional después de esta operación.
->
->Des:1 http://es.archive.ubuntu.com/ubuntu hirsute/universe amd64 hping3 amd64 3.a2.ds2-10 [106 kB]
->
->Descargados 106 kB en 1s (155 kB/s)
->
->Seleccionando el paquete hping3 previamente no seleccionado.
->
->(Leyendo la base de datos ... 192380 ficheros o directorios instalados actualmente.)
->
->Preparando para desempaquetar .../hping3_3.a2.ds2-10_amd64.deb ...
->
->Desempaquetando hping3 (3.a2.ds2-10) ...
->
->Configurando hping3 (3.a2.ds2-10) ...
->
->Procesando disparadores para man-db (2.9.4-2) ...
 
-## Uso básico de la herramienta.
+## Uso básico de Hping3.
 
 Uso básico de la herramienta:
 El uso de esta herramienta es muy sencillo, pero disponemos de una gran cantidad de argumentos con el objetivo de aumentar sus funcionalidades, como lanzar un determinado número de paquetes, enviar paquetes con un determinado intervalo de espera, enviar paquetes para «floodear» a un objetivo y realizarle una denegación de servicio, posibilidad de contar los paquetes enviados y recibidos por los diferenes hosts, e incluso un modo de depuración para ver a bajo nivel qué está ocurriendo en la red.
