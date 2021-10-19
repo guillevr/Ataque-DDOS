@@ -338,10 +338,10 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >guillevr@servidor:~$
 
 
-![](pag_por_defecto_apache.png)
+![](pag_por_defecto_apache.jpg)
 
 Lo mas importante es, irnos al CLIENTE y comprobar que buscando en el navegador la IP del SERVIDOR nos aparece la página web que hemos creado.
-![](acceso_a_web_cliente_servidor.png)
+![](acceso_a_web_cliente_servidor.jpg)
 
 
 ## Configuración del equipo ATACANTE.
