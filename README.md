@@ -605,9 +605,9 @@ Despues de la cantidad de paquetes que estamos enviando, si nos vamos al equipo 
 
 # BIBLIOGRAFÍA
 
-https://comandoit.com/ataque-ddos-con-hping3/
-https://www.redeszone.net/tutoriales/seguridad/hping3-manipular-paquetes-tcp-ip-ataques/
-https://lamiradadelreplicante.com/2012/01/24/ataque-ddos-syn-flood-con-hping3/
-https://www.ovh.com/world/es/anti-ddos/principio-anti-ddos.xml
-https://www.kaspersky.es/resource-center/threats/ddos-attacks
-https://es.wikipedia.org/wiki/Ataque_de_denegaci%C3%B3n_de_servicio
+* https://comandoit.com/ataque-ddos-con-hping3/
+* https://www.redeszone.net/tutoriales/seguridad/hping3-manipular-paquetes-tcp-ip-ataques/
+* https://lamiradadelreplicante.com/2012/01/24/ataque-ddos-syn-flood-con-hping3/
+* https://www.ovh.com/world/es/anti-ddos/principio-anti-ddos.xml
+* https://www.kaspersky.es/resource-center/threats/ddos-attacks
+* https://es.wikipedia.org/wiki/Ataque_de_denegaci%C3%B3n_de_servicio
