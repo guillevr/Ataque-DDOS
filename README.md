@@ -303,6 +303,7 @@ Una vez haya terminado la instalacion, comprobamos el estado de apache y a trave
 >
 >guillevr@servidor:~$
 
+![](pag_por_defecto_apache.jpg)
 
 Ahora editaremos la pagina un poco para darle un toque personal.
 >guillevr@servidor:~$ sudo gedit /var/www/html/index.html
@@ -336,9 +337,6 @@ Ahora editaremos la pagina un poco para darle un toque personal.
 >
 >
 >guillevr@servidor:~$
-
-
-![](https://github.com/guillevr/Ataque-DDOS/blob/main/pag_por_defecto_apache.jpg)
 
 Lo mas importante es, irnos al CLIENTE y comprobar que buscando en el navegador la IP del SERVIDOR nos aparece la página web que hemos creado.
 ![](acceso_a_web_cliente_servidor.jpg)
