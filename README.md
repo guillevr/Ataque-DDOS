@@ -419,6 +419,7 @@ Ahora instalaremos la herramienta que necesitamos para dicho ataque (hping3) y u
 > Procesando disparadores para man-db (2.9.4-2) ...
 >
 > guillevr@atacante:~$
+>
 > guillevr@atacante:~$ sudo apt-get install wireshark
 >
 > Leyendo lista de paquetes... Hecho
