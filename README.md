@@ -519,7 +519,7 @@ Como filtro añadiremos como IP de destino la IP del SERVIDOR.
 
 > ip.dst==10.0.2.5
 
-![](captura_ip_destino.jpg)
+![](capturar_ip_destino.jpg)
 
 Por otra parte, abriremos una ventana de comandos y escribiremos el siguiente comando:
 
@@ -546,7 +546,7 @@ Tras ejecutar dicho comando, veremos en wireshark el trafico que hay por la inte
 Como son peticiones con poco peso no tumbaremos el servidor.
 Para comprobar que sigue en funcionamiento el servidor, mientras seguimos enviando paquetes nos iremos a la maquina CLIENTE y realizaremos una peticion a la pagina web del servidor.
 
-![](ataque_1:1.jpg)
+![](ataque_1_1.jpg)
 
 El segundo ataque lo realizaremos cambiando el tamaño de los paquetes y los paquetes que enviaremos por segundo.
 El comando que utilizaremos para ello es el siguiente:
