@@ -513,12 +513,13 @@ Para ver los paquetes que envía el atacante, abriremos wireshark en la máquina
 
 Una vez abre wireshark, seleccionaremos la interfaz por la que queremos capturar el trafico. En mi caso se trata de la "enp0s3"
 
-# AÑADIR IMAGEN
+![](interfaz_wireshark.jpg)
 
 Como filtro añadiremos como IP de destino la IP del SERVIDOR.
 
 > ip.dst==10.0.2.5
-# AÑADIR IMAGEN
+
+![](captura_ip_destino.jpg)
 
 Por otra parte, abriremos una ventana de comandos y escribiremos el siguiente comando:
 
@@ -540,12 +541,12 @@ Tras ejecutar dicho comando, veremos en wireshark el trafico que hay por la inte
 >
 > round-trip min/avg/max = 0.0/0.0/0.0 ms
 
-# AÑADIR IMAGEN ATAQUE_1
+![](ataque_1.jpg)
 
 Como son peticiones con poco peso no tumbaremos el servidor.
 Para comprobar que sigue en funcionamiento el servidor, mientras seguimos enviando paquetes nos iremos a la maquina CLIENTE y realizaremos una peticion a la pagina web del servidor.
 
-# AÑADIR IMAGEN ATAQUE_1_1
+![](ataque_1:1.jpg)
 
 El segundo ataque lo realizaremos cambiando el tamaño de los paquetes y los paquetes que enviaremos por segundo.
 El comando que utilizaremos para ello es el siguiente:
@@ -554,7 +555,7 @@ El comando que utilizaremos para ello es el siguiente:
 
 Podremos comprobar con una captura de wireshark la cantidad de paquetes que se llegan a enviar pero aun así, no se llega a tumbar la web del SERVIDOR.
 
-# AÑADIR IMAGEN ATAQUE_2
+![](ataque_2.jpg)
 
 > guillevr@atacante:~$ sudo hping3 --rand-source -d 500 10.0.2.5 -p 80 --faster
 >
@@ -574,7 +575,7 @@ Podremos comprobar con una captura de wireshark la cantidad de paquetes que se l
 
 Para volver a comprobarlo, mientras seguimos realizando el ataque, nos iremos al CLIENTE y volveremos a hacerle una peticion al SERVIDOR a traves de la página web.
 
-# AÑADIR IMAGEN ATAQUE_2_1
+![](ataque_2_1.jpg)
 
 El tercer ataque es el definitivo. Para ello, ejecutaremos el mismo comando que hemos utilizado anteriormente pero en modo **--flood**, el cual enía paquetes lo mas rapido posible pero no nos envia respuesta de si han llegado los paquetes.
 
@@ -596,8 +597,8 @@ La sentencia del comando seria la siguiente:
 >
 > guillevr@atacante:~$
 
-# AÑADIR IMAGEN ATAQUE_3_0
+![](ataque_3.jpg)
 
 Despues de la cantidad de paquetes que estamos enviando, si nos vamos al equipo CLIENTE y realizamos una peticion al SERVIDOR comprobaremos que la pagina web no responde.
 
-# AÑADIR IMAGEN ATAQUE_3_1
+![](ataque_3_1.jpg)
