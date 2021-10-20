@@ -611,3 +611,7 @@ Despues de la cantidad de paquetes que estamos enviando, si nos vamos al equipo 
 * https://www.ovh.com/world/es/anti-ddos/principio-anti-ddos.xml
 * https://www.kaspersky.es/resource-center/threats/ddos-attacks
 * https://es.wikipedia.org/wiki/Ataque_de_denegaci%C3%B3n_de_servicio
+
+# Enlace a video.
+
+* https://youtu.be/3BPZ_8zxJ5M
